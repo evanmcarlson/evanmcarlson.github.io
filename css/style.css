@@ -1,4 +1,6 @@
 .boxed {
+  width: 70%;
+  height: auto;
   border: 3px solid black;
 }
 
