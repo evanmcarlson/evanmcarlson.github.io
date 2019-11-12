@@ -1,7 +1,11 @@
 .boxed {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   width: 70%;
   height: auto;
-  border: 3px solid black;
+  background-color: black;
+  color: white;
 }
 
 .headshot {
@@ -18,5 +22,4 @@
 .headshot img {
   width: 100%;
   height: auto;
-  margin-top:50px;
 }
