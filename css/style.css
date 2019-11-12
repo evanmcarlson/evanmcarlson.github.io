@@ -1,9 +1,12 @@
 .headshot {
+  display: block;
   position: relative;
+  margin-left: auto;
+  margin-right: auto;
   width: 200px;
   height: 200px;
-  overflow: hidden;
   border-radius: 50%;
+  overflow: hidden;
 }
 
 .headshot img {
