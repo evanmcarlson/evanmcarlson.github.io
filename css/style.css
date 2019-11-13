@@ -3,6 +3,7 @@
 
 /* Style the background */
 body {
+  background-color: rgba(15, 15, 15);
   background-image: url("../images/city.gif");
   background-repeat: no-repeat;
   background-size: cover;
