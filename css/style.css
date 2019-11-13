@@ -3,7 +3,10 @@
 
 /* Style the background */
 body {
-  background-color: #999;
+  background-image: url("../images/city.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom right;
   font-family: 'Source Sans Pro';
   text-align: center;
 }
@@ -22,26 +25,39 @@ body {
   width: 90%; /* width for mobile */
   max-width: 500px; /* width for desktop */
   height: auto; /* dynamically adjust height to content */
-  background-color: #FFFFFF; /* white background */
-  box-shadow: 0px 0px 10px 5px grey; /* slight 3D effect */
+  background:rgba(255, 255, 255,0.9); /* white bg color with slight opacity */
+  /* box-shadow: 0px 0px 10px 5px grey;  slight 3D effect */
 }
 
 /* Heading/name style */
 h1 {
   text-transform: uppercase;
+  letter-spacing: 0.15em;
 }
 
 /* Ensure images take up only the width of their container */
 img {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 /* Headshot container that properly resizes photo */
 .headshot {
+  opacity: 1;
   height: 500px; /* keeps the image square on desktop */
-  max-height: 100vw; /* keeps the image square on mobile */
+  max-height: 80vw; /* keeps the image square on mobile */
   width: 100%; /* fits the image to its container */
   object-fit: cover; /* maintains aspect ratio */
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(20%);
+}
+
+.headshot:hover {
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
+}
+
+.icons {
+  margin-top: -2.5em;
 }
   
 /* Style list elements */
@@ -62,5 +78,6 @@ a:hover {
 }
 
 p {
+  margin-top: -2.5em;
   padding: 2em;
 }
