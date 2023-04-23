@@ -3,17 +3,15 @@
 
 /* Style the background */
 body {
-  background-color: rgba(15, 15, 15);
-  background-image: url("../images/city.gif");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: bottom right;
+  /* background: rgb(92,61,180);
+  background: linear-gradient(90deg, rgba(92,61,180,1) 0%, rgba(112,76,182,1) 100%); */
   font-family: 'Source Sans Pro';
   text-align: center;
 }
 
 /* Highest level container to prevent horizontal scrolling and overflow */
 .container {
+  position: relative;
   width: 95%;
   margin: 0 auto;
 }
@@ -48,13 +46,6 @@ img {
   max-height: 80vw; /* keeps the image square on mobile */
   width: 100%; /* fits the image to its container */
   object-fit: cover; /* maintains aspect ratio */
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(20%);
-}
-
-.headshot:hover {
-  -webkit-filter: grayscale(0);
-  filter: grayscale(0);
 }
 
 .icons {
