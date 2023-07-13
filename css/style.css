@@ -90,8 +90,23 @@ p {
   margin-bottom: 20px;
 }
 
-.card h2 {
-  margin-left: 60px;
+.card summary {
+  margin: 20px 0 20px 60px;
+  font-size: 1.5em;
+  font-weight: bold;
+  display: block;
+}
+
+.card summary:hover {
+  cursor: pointer;
+}
+
+details>summary::before {
+  content: '+ ';
+}
+
+details[open]>summary::before {
+  content: '- ';
 }
 
 .cardContent {
