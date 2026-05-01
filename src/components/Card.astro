@@ -1,0 +1,33 @@
+---
+import type { Project } from '../data/projects';
+
+type Props = Project;
+
+const { owner, name, description, tags, githubUrl, demoUrl, demoLabel = 'Live Demo →' } = Astro.props;
+const isExternal = demoUrl?.startsWith('http');
+---
+
+<article class="project-card">
+  <div class="card-body">
+    <a href={githubUrl} target="_blank" rel="noopener noreferrer" class="card-title">
+      <i class="fab fa-github"></i>
+      <span class="repo-owner">{owner}</span><span class="repo-sep">/</span><span class="repo-name">{name}</span>
+    </a>
+    <div class="card-tags">
+      {tags.map((tag) => <span class="tag">{tag}</span>)}
+    </div>
+    <p>{description}</p>
+    {demoUrl && (
+      <div class="card-footer">
+        <a
+          href={demoUrl}
+          target={isExternal ? '_blank' : undefined}
+          rel={isExternal ? 'noopener noreferrer' : undefined}
+          class="btn btn-primary"
+        >
+          {demoLabel}
+        </a>
+      </div>
+    )}
+  </div>
+</article>
