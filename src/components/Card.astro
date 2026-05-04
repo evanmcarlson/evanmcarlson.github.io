@@ -42,8 +42,8 @@ const frameworkBtnClass  = tags.map(t => btnClass[t]).find(Boolean) ?? 'btn-prim
       <div class="card-footer">
         <a
           href={demoUrl}
-          target={isExternal ? '_blank' : undefined}
-          rel={isExternal ? 'noopener noreferrer' : undefined}
+          target="_blank"
+          rel="noopener noreferrer"
           class={`btn ${frameworkBtnClass}`}
         >
           <i class="fas fa-vr-cardboard"></i> {demoLabel}
