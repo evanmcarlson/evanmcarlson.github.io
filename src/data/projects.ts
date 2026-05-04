@@ -200,14 +200,6 @@ export const eighthWallProjects: Project[] = [
   },
   {
     owner: 'evanmcarlson',
-    name: 'three-model-distortion',
-    description: 'A WebAR experience applying real-time shader-based distortion to a 3D model using Three.js and 8th Wall.',
-    tags: ['three.js'],
-    githubUrl: 'https://github.com/evanmcarlson/three-model-distortion',
-    demoUrl: 'https://evanmcarlson.github.io/three-model-distortion',
-  },
-  {
-    owner: 'evanmcarlson',
     name: 'three-ratk-mesh-detection',
     description: 'Real-time mesh detection using the Raw API Toolkit (RATK) with Three.js and 8th Wall, surfacing geometry from the physical environment.',
     tags: ['three.js'],
