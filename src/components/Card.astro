@@ -3,18 +3,39 @@ import type { Project } from '../data/projects';
 
 type Props = Project;
 
-const { owner, name, description, tags, githubUrl, demoUrl, demoLabel = 'Live Demo →' } = Astro.props;
+const { owner, name, description, tags, githubUrl, demoUrl, demoLabel = 'Launch' } = Astro.props;
 const isExternal = demoUrl?.startsWith('http');
+
+const tagClass: Record<string, string> = {
+  'A-Frame':  'tag-aframe',
+  'three.js': 'tag-threejs',
+  'Studio':   'tag-studio',
+};
+
+const cardClass: Record<string, string> = {
+  'A-Frame':  'card-aframe',
+  'three.js': 'card-threejs',
+  'Studio':   'card-studio',
+};
+
+const btnClass: Record<string, string> = {
+  'A-Frame':  'btn-aframe',
+  'three.js': 'btn-threejs',
+  'Studio':   'btn-studio',
+};
+
+const frameworkCardClass = tags.map(t => cardClass[t]).find(Boolean) ?? '';
+const frameworkBtnClass  = tags.map(t => btnClass[t]).find(Boolean) ?? 'btn-primary';
 ---
 
-<article class="project-card">
+<article class={`project-card ${frameworkCardClass}`}>
   <div class="card-body">
     <a href={githubUrl} target="_blank" rel="noopener noreferrer" class="card-title">
       <i class="fab fa-github"></i>
       <span class="repo-owner">{owner}</span><span class="repo-sep">/</span><span class="repo-name">{name}</span>
     </a>
     <div class="card-tags">
-      {tags.map((tag) => <span class="tag">{tag}</span>)}
+      {tags.map((tag) => <span class={`tag ${tagClass[tag] ?? ''}`}>{tag}</span>)}
     </div>
     <p>{description}</p>
     {demoUrl && (
@@ -23,9 +44,9 @@ const isExternal = demoUrl?.startsWith('http');
           href={demoUrl}
           target={isExternal ? '_blank' : undefined}
           rel={isExternal ? 'noopener noreferrer' : undefined}
-          class="btn btn-primary"
+          class={`btn ${frameworkBtnClass}`}
         >
-          {demoLabel}
+          <i class="fas fa-vr-cardboard"></i> {demoLabel}
         </a>
       </div>
     )}

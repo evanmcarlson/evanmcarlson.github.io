@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
-import { eighthWallProjects, resources } from '../data/projects';
+import { spotlightProjects, eighthWallProjects, resources } from '../data/projects';
 ---
 
 <Layout>
@@ -25,6 +25,13 @@ import { eighthWallProjects, resources } from '../data/projects';
   </header>
 
   <main>
+    <section id="spotlight" class="section">
+      <h2 class="section-title">Spotlight</h2>
+      <div class="card-grid">
+        {spotlightProjects.map((project) => <Card {...project} />)}
+      </div>
+    </section>
+
     <section id="projects" class="section">
       <h2 class="section-title">8th Wall Projects</h2>
       <div class="card-grid">

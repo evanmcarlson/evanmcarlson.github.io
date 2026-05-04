@@ -10,6 +10,7 @@
 
 :root {
   --accent: #AD50FF;
+  --threejs: #ffffff;
 
   --bg: #0d0d0d;
   --bg-card: #161616;
@@ -34,6 +35,7 @@
   --border: rgba(0, 0, 0, 0.09);
   --border-hover: rgba(0, 0, 0, 0.22);
   --header-bg: rgba(245, 245, 245, 0.9);
+  --threejs: #111111;
 }
 
 /* ==========================================
@@ -188,19 +190,34 @@ main {
 .project-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 6px;
+  border-radius: 8px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: border-color var(--ease);
+  transition: border-color var(--ease), box-shadow var(--ease);
 }
 
 .project-card:hover {
   border-color: var(--border-hover);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
 }
 
+[data-theme="light"] .project-card:hover {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* ---- Framework card variants — left border stripe ---- */
+
+.card-aframe  { box-shadow: inset 3px 0 0 #ef2d5e; }
+.card-threejs { box-shadow: inset 3px 0 0 var(--threejs); }
+.card-studio  { box-shadow: inset 3px 0 0 #AD50FF; }
+
+.card-aframe:hover  { box-shadow: inset 3px 0 0 #ef2d5e,  0 4px 24px rgba(0, 0, 0, 0.2); }
+.card-threejs:hover { box-shadow: inset 3px 0 0 var(--threejs), 0 4px 24px rgba(0, 0, 0, 0.2); }
+.card-studio:hover  { box-shadow: inset 3px 0 0 #AD50FF,  0 4px 24px rgba(0, 0, 0, 0.2); }
+
 .card-body {
-  padding: 1.25rem;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -258,6 +275,28 @@ main {
   border: 1px solid var(--border);
 }
 
+/* A-Frame — red */
+.tag-aframe {
+  color: #ef2d5e;
+  background: rgba(239, 45, 94, 0.08);
+  border-color: rgba(239, 45, 94, 0.25);
+}
+
+/* Three.js — grayscale */
+.tag-threejs {
+  color: var(--threejs);
+  background: transparent;
+  border-color: var(--threejs);
+  opacity: 0.6;
+}
+
+/* Studio — purple */
+.tag-studio {
+  color: #AD50FF;
+  background: rgba(173, 80, 255, 0.08);
+  border-color: rgba(173, 80, 255, 0.25);
+}
+
 .project-card p {
   font-size: 0.83rem;
   color: var(--text-muted);
@@ -267,8 +306,10 @@ main {
 }
 
 .card-footer {
+  display: flex;
+  justify-content: flex-end;
   margin-top: auto;
-  padding-top: 0.875rem;
+  padding-top: 1rem;
   border-top: 1px solid var(--border);
 }
 
@@ -279,25 +320,25 @@ main {
 .btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  padding: 6px 13px;
+  gap: 0.4rem;
+  padding: 6px 14px;
   border-radius: 6px;
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   font-weight: 500;
   white-space: nowrap;
   cursor: pointer;
   border: none;
-  transition: all var(--ease);
+  transition: filter var(--ease);
 }
 
-.btn-primary {
-  background: var(--accent);
-  color: #fff;
+.btn:hover {
+  filter: brightness(1.15);
 }
 
-.btn-primary:hover {
-  opacity: 0.88;
-}
+.btn-primary  { background: var(--accent); color: #fff; }
+.btn-aframe   { background: #ef2d5e;       color: #fff; }
+.btn-threejs  { background: var(--threejs); color: var(--bg); }
+.btn-studio   { background: #AD50FF;       color: #fff; }
 
 /* ==========================================
    FOOTER
