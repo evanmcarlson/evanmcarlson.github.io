@@ -8,7 +8,7 @@ export interface Project {
   demoLabel?: string;
 }
 
-export const spotlightProjects: Project[] = [
+export const showcaseProjects: Project[] = [
   {
     owner: 'evanmcarlson',
     name: 'uncharted',

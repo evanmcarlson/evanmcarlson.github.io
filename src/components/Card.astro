@@ -1,5 +1,6 @@
 ---
 import type { Project } from '../data/projects';
+import ArIcon from './ArIcon.astro';
 
 type Props = Project;
 
@@ -46,7 +47,7 @@ const frameworkBtnClass  = tags.map(t => btnClass[t]).find(Boolean) ?? 'btn-prim
           rel="noopener noreferrer"
           class={`btn ${frameworkBtnClass}`}
         >
-          <i class="fas fa-vr-cardboard"></i> {demoLabel}
+          <ArIcon /> {demoLabel}
         </a>
       </div>
     )}
