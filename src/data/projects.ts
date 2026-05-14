@@ -63,6 +63,14 @@ export const eighthWallProjects: Project[] = [
   },
   {
     owner: 'evanmcarlson',
+    name: 'aframe-chromakey-image-target',
+    description: 'Chroma key (green screen) shader applied to an image target in A-Frame, compositing video content onto a tracked physical target in WebAR.',
+    tags: ['A-Frame'],
+    githubUrl: 'https://github.com/evanmcarlson/aframe-chromakey-image-target',
+    demoUrl: 'https://evanmcarlson.github.io/aframe-chromakey-image-target',
+  },
+  {
+    owner: 'evanmcarlson',
     name: 'aframe-selective-bloom',
     description: 'Selective bloom post-processing effect in A-Frame, applying glow to specific objects in a WebAR scene.',
     tags: ['A-Frame'],
