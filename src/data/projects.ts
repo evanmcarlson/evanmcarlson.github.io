@@ -11,6 +11,14 @@ export interface Project {
 export const showcaseProjects: Project[] = [
   {
     owner: 'evanmcarlson',
+    name: 's1',
+    description: 'AR-activated stickers for Shape Reality. The first sticker drop brings physical stickers to life with a WebAR experience built in A-Frame.',
+    tags: ['A-Frame'],
+    githubUrl: 'https://github.com/evanmcarlson/s1',
+    demoUrl: 'https://evanmcarlson.github.io/s1',
+  },
+  {
+    owner: 'evanmcarlson',
     name: 'uncharted',
     description: 'Coming soon.',
     tags: ['A-Frame'],
@@ -32,6 +40,14 @@ export const showcaseProjects: Project[] = [
     tags: ['Studio'],
     githubUrl: 'https://github.com/evanmcarlson/ctrl',
     demoUrl: 'https://evanmcarlson.github.io/ctrl',
+  },
+  {
+    owner: 'evanmcarlson',
+    name: 'aframe-chromakey-image-target',
+    description: 'Chroma key (green screen) shader applied to an image target in A-Frame, compositing video content onto a tracked physical target in WebAR.',
+    tags: ['A-Frame'],
+    githubUrl: 'https://github.com/evanmcarlson/aframe-chromakey-image-target',
+    demoUrl: 'https://evanmcarlson.github.io/aframe-chromakey-image-target',
   },
 ];
 
@@ -60,14 +76,6 @@ export const eighthWallProjects: Project[] = [
     tags: ['A-Frame'],
     githubUrl: 'https://github.com/evanmcarlson/aframe-chromakey',
     demoUrl: 'https://evanmcarlson.github.io/aframe-chromakey',
-  },
-  {
-    owner: 'evanmcarlson',
-    name: 'aframe-chromakey-image-target',
-    description: 'Chroma key (green screen) shader applied to an image target in A-Frame, compositing video content onto a tracked physical target in WebAR.',
-    tags: ['A-Frame'],
-    githubUrl: 'https://github.com/evanmcarlson/aframe-chromakey-image-target',
-    demoUrl: 'https://evanmcarlson.github.io/aframe-chromakey-image-target',
   },
   {
     owner: 'evanmcarlson',
