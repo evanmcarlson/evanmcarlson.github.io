@@ -9,7 +9,7 @@
 }
 
 :root {
-  --accent: #AD50FF;
+  --accent: rgb(0, 136, 255);
   --threejs: #ffffff;
 
   --bg: #0d0d0d;
@@ -178,6 +178,89 @@ main {
 }
 
 /* ==========================================
+   FEATURED BANNER
+   ========================================== */
+
+.featured-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1.75rem 2rem;
+  margin-bottom: 3rem;
+  border: 1px solid var(--border-hover);
+  border-radius: 10px;
+  background: var(--bg-card);
+  transition: border-color var(--ease), background var(--ease);
+}
+
+.featured-banner:hover {
+  border-color: var(--accent);
+  background: var(--bg-card-hover);
+}
+
+.featured-text {
+  min-width: 0;
+}
+
+.featured-kicker {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.featured-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.4rem;
+}
+
+.featured-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  max-width: 60ch;
+}
+
+.featured-repo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-top: 0.75rem;
+}
+
+.featured-cta {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text);
+  padding: 8px 16px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  white-space: nowrap;
+  transition: border-color var(--ease), color var(--ease);
+}
+
+.featured-banner:hover .featured-cta {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ==========================================
    CARD GRID
    ========================================== */
 
@@ -205,16 +288,6 @@ main {
 [data-theme="light"] .project-card:hover {
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
 }
-
-/* ---- Framework card variants — left border stripe ---- */
-
-.card-aframe  { box-shadow: inset 3px 0 0 #ef2d5e; }
-.card-threejs { box-shadow: inset 3px 0 0 var(--threejs); }
-.card-studio  { box-shadow: inset 3px 0 0 #AD50FF; }
-
-.card-aframe:hover  { box-shadow: inset 3px 0 0 #ef2d5e,  0 4px 24px rgba(0, 0, 0, 0.2); }
-.card-threejs:hover { box-shadow: inset 3px 0 0 var(--threejs), 0 4px 24px rgba(0, 0, 0, 0.2); }
-.card-studio:hover  { box-shadow: inset 3px 0 0 #AD50FF,  0 4px 24px rgba(0, 0, 0, 0.2); }
 
 .card-body {
   padding: 1.5rem;
@@ -246,30 +319,36 @@ main {
 .repo-owner {
   color: var(--text-muted);
   font-weight: 400;
+  transition: color var(--ease);
 }
 
 .repo-sep {
   color: var(--text-dim);
+  transition: color var(--ease);
 }
 
 .repo-name {
   font-weight: 600;
 }
 
+.card-title:hover .repo-owner,
+.card-title:hover .repo-sep {
+  color: var(--accent);
+}
+
 .card-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.3rem;
-  margin-bottom: 0.65rem;
 }
 
 .tag {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.58rem;
+  font-size: 0.68rem;
   font-weight: 400;
   letter-spacing: 0.04em;
-  padding: 2px 7px;
-  border-radius: 3px;
+  padding: 3px 9px;
+  border-radius: 4px;
   background: transparent;
   color: var(--text-muted);
   border: 1px solid var(--border);
@@ -307,7 +386,9 @@ main {
 
 .card-footer {
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
   margin-top: auto;
   padding-top: 1rem;
   border-top: 1px solid var(--border);
@@ -321,24 +402,22 @@ main {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  padding: 6px 14px;
-  border-radius: 6px;
+  padding: 7px 16px;
+  border-radius: 10px;
   font-size: 0.75rem;
-  font-weight: 500;
+  font-weight: 600;
   white-space: nowrap;
   cursor: pointer;
-  border: none;
-  transition: filter var(--ease);
+  background: rgba(0, 136, 255, 0.14);
+  color: rgb(0, 136, 255);
+  border: 1px solid rgba(0, 136, 255, 0.3);
+  transition: background var(--ease), border-color var(--ease);
 }
 
 .btn:hover {
-  filter: brightness(1.15);
+  background: rgba(0, 136, 255, 0.22);
+  border-color: rgba(0, 136, 255, 0.5);
 }
-
-.btn-primary  { background: var(--accent); color: #fff; }
-.btn-aframe   { background: #ef2d5e;       color: #fff; }
-.btn-threejs  { background: var(--threejs); color: var(--bg); }
-.btn-studio   { background: #AD50FF;       color: #fff; }
 
 /* ==========================================
    FOOTER
@@ -383,5 +462,11 @@ footer a:hover {
 
   .card-grid {
     grid-template-columns: 1fr;
+  }
+
+  .featured-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
   }
 }

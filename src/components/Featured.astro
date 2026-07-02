@@ -1,0 +1,19 @@
+---
+import type { Project } from '../data/projects';
+
+type Props = Project;
+
+const { owner, name, description, githubUrl, demoUrl, demoLabel = 'Open' } = Astro.props;
+---
+
+<a href={demoUrl ?? githubUrl} target="_blank" rel="noopener noreferrer" class="featured-banner">
+  <div class="featured-text">
+    <span class="featured-kicker">Tool</span>
+    <h3 class="featured-title">{name}</h3>
+    <p class="featured-desc">{description}</p>
+    <span class="featured-repo"><i class="fab fa-github"></i> {owner}/{name}</span>
+  </div>
+  <span class="featured-cta">
+    {demoLabel} <i class="fas fa-arrow-right"></i>
+  </span>
+</a>

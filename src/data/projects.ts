@@ -8,6 +8,16 @@ export interface Project {
   demoLabel?: string;
 }
 
+export const featuredProject: Project = {
+  owner: 'evanmcarlson',
+  name: 'image-target-studio',
+  description: 'A browser-based tool for generating 8th Wall image target files. Crop, resize, and grayscale a photo, and download a ready-to-use .zip folder.',
+  tags: [],
+  githubUrl: 'https://github.com/evanmcarlson/image-target-studio',
+  demoUrl: 'https://evanmcarlson.github.io/image-target-studio',
+  demoLabel: 'Open Studio',
+};
+
 export const showcaseProjects: Project[] = [
   {
     owner: 'evanmcarlson',
@@ -48,6 +58,22 @@ export const showcaseProjects: Project[] = [
     tags: ['A-Frame'],
     githubUrl: 'https://github.com/evanmcarlson/aframe-chromakey-image-target',
     demoUrl: 'https://evanmcarlson.github.io/aframe-chromakey-image-target',
+  },
+  {
+    owner: 'evanmcarlson',
+    name: 'ctrl-shirt',
+    description: 'An AR-activated t-shirt for the ctrl project. Scanning the printed design tracks an image target and composites chroma-keyed video onto the shirt in WebAR.',
+    tags: ['A-Frame'],
+    githubUrl: 'https://github.com/evanmcarlson/ctrl-shirt',
+    demoUrl: 'https://evanmcarlson.github.io/ctrl-shirt',
+  },
+  {
+    owner: 'evanmcarlson',
+    name: 'image-target-scan-overlay',
+    description: 'A scan-and-lock UI overlay for A-Frame image target experiences. Animated corner brackets snap onto the tracked target as it\'s found, with a sweeping scan line confirming the lock.',
+    tags: ['A-Frame'],
+    githubUrl: 'https://github.com/evanmcarlson/image-target-scan-overlay',
+    demoUrl: 'https://evanmcarlson.github.io/image-target-scan-overlay',
   },
 ];
 
