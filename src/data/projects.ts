@@ -1,7 +1,9 @@
 export interface Project {
   owner: string;
   name: string;
-  description: string;
+  description: string | string[];
+  /** Cover image URL; null renders an empty grey placeholder. Omit for no cover. */
+  coverImage?: string | null;
   tags: string[];
   githubUrl: string;
   demoUrl?: string;
@@ -11,7 +13,7 @@ export interface Project {
 export const featuredProject: Project = {
   owner: 'evanmcarlson',
   name: 'image-target-studio',
-  description: 'A browser-based tool for generating 8th Wall image target files. Crop, resize, and grayscale a photo, and download a ready-to-use .zip folder.',
+  description: 'A browser-based tool for generating 8th Wall image target files. Crop, resize, and grayscale a photo, test the image target\'s tracking, and download a ready-to-use .zip folder.',
   tags: [],
   githubUrl: 'https://github.com/evanmcarlson/image-target-studio',
   demoUrl: 'https://evanmcarlson.github.io/image-target-studio',
@@ -22,7 +24,11 @@ export const showcaseProjects: Project[] = [
   {
     owner: 'evanmcarlson',
     name: 's1',
-    description: 'AR-activated stickers for Shape Reality. The first sticker drop brings physical stickers to life with a WebAR experience built in A-Frame.',
+    description: [
+      'AR-activated stickers for Shape Reality.',
+      'The first sticker drop brings physical stickers to life with a WebAR experience built with 8th Wall & A-Frame.',
+    ],
+    coverImage: 'https://res.cloudinary.com/dbx8hpepj/image/upload/f_auto,q_auto,w_800/v1783409902/IMG_2479.jpg',
     tags: ['A-Frame'],
     githubUrl: 'https://github.com/evanmcarlson/s1',
     demoUrl: 'https://evanmcarlson.github.io/s1',
@@ -30,7 +36,11 @@ export const showcaseProjects: Project[] = [
   {
     owner: 'evanmcarlson',
     name: 'uncharted',
-    description: 'Coming soon.',
+    description: [
+      'An interactive WebAR puzzle experience using 8th Wall & A-Frame.',
+      'Image target experience showcasing a dramatic reveal animation, enhanced with bloom postprocessing.',
+    ],
+    coverImage: 'https://res.cloudinary.com/dbx8hpepj/image/upload/f_auto,q_auto,w_800/v1757102604/images/hero/uncharted.png',
     tags: ['A-Frame'],
     githubUrl: 'https://github.com/evanmcarlson/uncharted',
     demoUrl: '/uncharted',
@@ -38,7 +48,11 @@ export const showcaseProjects: Project[] = [
   {
     owner: 'evanmcarlson',
     name: 'balenciaga-pride',
-    description: 'An AR-activated t-shirt concept for Balenciaga. When scanned, the shirt reveals a digital animation transforming the Balenciaga logo through the colors of the rainbow.',
+    description: [
+      'AR-activated t-shirt concept using 8th Wall & A-Frame.',
+      'When scanned, the shirt revealed a digital animation that seamlessly transforms the Balenciaga logo through the colors of the rainbow.',
+    ],
+    coverImage: 'https://res.cloudinary.com/dbx8hpepj/image/upload/f_auto,q_auto,w_800/v1757102594/images/hero/balenciaga.png',
     tags: ['A-Frame'],
     githubUrl: 'https://github.com/evanmcarlson/balenciaga-pride',
     demoUrl: 'https://evanmcarlson.github.io/balenciaga-pride',

@@ -4,8 +4,9 @@ import ArIcon from './ArIcon.astro';
 
 type Props = Project;
 
-const { owner, name, description, tags, githubUrl, demoUrl, demoLabel = 'Launch' } = Astro.props;
+const { owner, name, description, coverImage, tags, githubUrl, demoUrl, demoLabel = 'Launch' } = Astro.props;
 const isExternal = demoUrl?.startsWith('http');
+const paragraphs = Array.isArray(description) ? description : [description];
 
 const tagClass: Record<string, string> = {
   'A-Frame':  'tag-aframe',
@@ -16,12 +17,19 @@ const tagClass: Record<string, string> = {
 ---
 
 <article class="project-card">
+  {coverImage !== undefined && (
+    <div class="card-cover">
+      {coverImage && <img src={coverImage} alt={`${name} preview`} loading="lazy" />}
+    </div>
+  )}
   <div class="card-body">
     <a href={githubUrl} target="_blank" rel="noopener noreferrer" class="card-title">
       <i class="fab fa-github"></i>
       <span class="repo-path"><span class="repo-owner">{owner}</span><span class="repo-sep">/</span><span class="repo-name">{name}</span></span>
     </a>
-    <p>{description}</p>
+    <div class="card-description">
+      {paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+    </div>
     {(tags.length > 0 || demoUrl) && (
       <div class="card-footer">
         <div class="card-tags">
