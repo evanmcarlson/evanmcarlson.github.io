@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import Featured from '../components/Featured.astro';
-import { showcaseProjects, eighthWallProjects, resources, featuredProject } from '../data/projects';
+import { showcaseProjects, eighthWallProjects, faceProjects, resources, featuredProject } from '../data/projects';
 ---
 
 <Layout>
@@ -39,6 +39,13 @@ import { showcaseProjects, eighthWallProjects, resources, featuredProject } from
       <h2 class="section-title">Demos</h2>
       <div class="card-grid">
         {eighthWallProjects.map((project) => <Card {...project} />)}
+      </div>
+    </section>
+
+    <section id="face" class="section">
+      <h2 class="section-title">Face</h2>
+      <div class="card-grid">
+        {faceProjects.map((project) => <Card {...project} />)}
       </div>
     </section>
 
