@@ -237,6 +237,14 @@ export const eighthWallProjects: Project[] = [
     githubUrl: 'https://github.com/evanmcarlson/aframe-web-workers',
     demoUrl: 'https://evanmcarlson.github.io/aframe-web-workers',
   },
+  {
+    owner: 'evanmcarlson',
+    name: 'sample-cam',
+    description: 'A plane tracked to an image target "disappears" by continuously repainting itself with colors sampled live from the camera feed at its own corners, blending into whatever surface or lighting it\'s placed on.',
+    tags: ['A-Frame'],
+    githubUrl: 'https://github.com/evanmcarlson/sample-cam',
+    demoUrl: 'https://evanmcarlson.github.io/sample-cam',
+  },
   // three.js
   {
     owner: 'evanmcarlson',
